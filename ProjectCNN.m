@@ -77,15 +77,15 @@ net = trainNetwork(imds,layers,options);
 -----------------------------------------
 %}
 
-filename = strcat('C:\Users\dppel\Projects\CPE 440\testData\64QAM_187.jpg');
+filename = strcat('C:\Users\dppel\Projects\CPE 440\testData\64QAM\64QAM_187.jpg');
 im = imread(filename);
 k=imresize(im,[126,126]);
-newfilename=strcat('C:\Users\dppel\Projects\CPE 440\testData\64QAM_187.jpg');
+newfilename=strcat('C:\Users\dppel\Projects\CPE 440\testData\64QAM\64QAM_187.jpg');
 imwrite(k,newfilename,'png');
 
-digitDatasetPath1 = fullfile(pwd,'testData\64QAM_187.jpg');
+digitDatasetPath1 = fullfile(pwd,'testData\64QAM\64QAM_187.jpg');
 imds1 = imageDatastore(digitDatasetPath1, 'LabelSource', 'foldernames', 'IncludeSubfolders',true);
 Ypred = classify(net,imds1);
-imshow('testData\64QAM_187.jpg');
+imshow('testData\64QAM\64QAM_187.jpg');
 title(string(Ypred(1)));
 Ypred;
